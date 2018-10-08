@@ -5,13 +5,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { appRoutes } from './routes';
 import { LivroListaComponent } from './livro-lista/livro-lista.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { LivroComponent } from './pages/livro/livro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LivroListaComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    LivroComponent
   ],
   imports: [
     BrowserModule,
