@@ -7,13 +7,15 @@ import { appRoutes } from './routes';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { LivroComponent } from './pages/livro/livro.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioComponent,
     LivroComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
