@@ -1,3 +1,16 @@
-<p>
-  livro works!
-</p>
+<div *ngIf="livro">
+  <h2>
+    {{livro.titulo | uppercase}}
+  </h2>
+  <p>
+    <b>Autor</b>: {{livro.autor}}
+  </p>
+  <p>
+    <b>Ano</b>: {{livro.ano}}
+  </p>
+</div>
+<div *ngIf="!livro">
+  <h2>
+    Livro não encontrado!
+  </h2>
+</div>
