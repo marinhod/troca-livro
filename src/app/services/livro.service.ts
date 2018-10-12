@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Livro } from '../models/livro';
+import { BASE_URL } from '../../../env-config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LivroService {
-  private URL = 'http://localhost:3000/api/v1/livro';
+  private URL = `${BASE_URL}/livro`;
 
   constructor(private http: HttpClient) {}
 
