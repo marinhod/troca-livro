@@ -11,7 +11,7 @@ export class LivroService {
 
   constructor(private http: HttpClient) {}
 
-  get(slug: string): Observable<Livro> {
+  getLivro(slug: string): Observable<Livro> {
     let url: string = `${this.URL}/${slug}`;
     return this.http.get<Livro>(url);
   }

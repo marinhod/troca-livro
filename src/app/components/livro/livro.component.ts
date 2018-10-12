@@ -22,7 +22,7 @@ export class LivroComponent implements OnInit {
   
   getLivro(slug: string): void {
     this.livroService
-      .get(slug)
+      .getLivro(slug)
       .subscribe(
         item => (this.livro = item),
         error => (this.error = error)

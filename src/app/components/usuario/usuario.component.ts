@@ -22,7 +22,7 @@ export class UsuarioComponent implements OnInit, OnDestroy {
   
   getUsuario(slug: string): void {
     this.usuarioService
-      .get(slug)
+      .getUsuario(slug)
       .subscribe(
         item => (this.usuario = item),
         error => (this.error = error)
