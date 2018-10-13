@@ -17,16 +17,16 @@ export class UsuarioComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
     private usuarioService: UsuarioService) {}
-  
+
   getUsuario(slug: string): void {
     this.usuarioService
       .getUsuario(slug)
       .subscribe(
         item => (this.usuario = item),
         error => (this.error = error)
-      )
+      );
   }
 
   getSlug(): void {
