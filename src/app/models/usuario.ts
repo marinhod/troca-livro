@@ -5,5 +5,6 @@ export class Usuario {
     sobrenome: string;
     slug: string;
     email: string;
+    foto: string;
     livros: Livro[];
 }
