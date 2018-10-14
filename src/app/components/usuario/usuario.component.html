@@ -6,7 +6,7 @@
     <b>Email</b>: {{usuario.email}}
   </p>
   <p>
-    <b>Foto:</b>: {{usuario.foto}}
+    <img src="{{usuario.foto ? usuario.foto : fotoDefault}}" />
   </p>
 </div>
 <div *ngIf="!usuario">

@@ -14,11 +14,14 @@ export class UsuarioComponent implements OnInit, OnDestroy {
   private error: any;
   private slug: string;
   private sub: any;
+  private fotoDefault: string;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private usuarioService: UsuarioService) {}
+    private usuarioService: UsuarioService) {
+      this.fotoDefault = '/assets/perfil-default.png';
+    }
 
   getUsuario(slug: string): void {
     this.usuarioService
