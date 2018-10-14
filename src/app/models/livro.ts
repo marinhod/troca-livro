@@ -1,5 +1,5 @@
-import { Autor } from "../autor";
-import { Genero } from "../genero";
+import { Autor } from "./autor";
+import { Genero } from "./genero";
 
 export class Livro {
     id: string;
