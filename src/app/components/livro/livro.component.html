@@ -1,16 +1,12 @@
 <div *ngIf="livro">
-  <h2>
-    {{livro.titulo | uppercase}}
-  </h2>
-  <p>
-    <b>Autor</b>: {{livro.autor}}
-  </p>
-  <p>
-    <b>Ano</b>: {{livro.ano}}
-  </p>
   <p>
     <img src="{{livro.capa ? livro.capa : capaDefault}}" />
   </p>
+  <h2>
+    {{livro.titulo}}
+  </h2>
+  <p>{{livro.ano}}</p>
+  <p>{{livro.descricao}}</p>
 </div>
 <div *ngIf="!livro">
   <h2>
