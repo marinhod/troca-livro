@@ -17,4 +17,8 @@ export class LivroService {
     return this.http.get<Livro>(url);
   }
 
+  getLista(): Observable<Livro[]> {
+    return this.http.get<Livro[]>(this.URL);
+  }
+  
 }
