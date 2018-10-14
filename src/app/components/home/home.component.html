@@ -1,7 +1,7 @@
 <ul>
   <li *ngFor="let livro of livros">
     <a href="livro/{{livro.slug}}">
-      <img src="{{livro.capa}}" alt="{{livro.titulo}}"/>
+      <figure [style.backgroundImage]="'url('+livro.capa+')'"></figure>
     </a>
   </li>
 </ul>
