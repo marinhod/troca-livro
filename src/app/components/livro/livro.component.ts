@@ -14,11 +14,14 @@ export class LivroComponent implements OnInit {
   private error: any;
   private slug: string;
   private sub: any;
+  private capaDefault: string;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute, 
-    private livroService: LivroService) {}
+    private livroService: LivroService) {
+      this.capaDefault = '/assets/livro-default.png';
+    }
   
   getLivro(slug: string): void {
     this.livroService

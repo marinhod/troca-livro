@@ -9,7 +9,7 @@
     <b>Ano</b>: {{livro.ano}}
   </p>
   <p>
-    <b>Foto</b>: {{livro.foto}}
+    <img src="{{livro.capa ? livro.capa : capaDefault}}" />
   </p>
 </div>
 <div *ngIf="!livro">
