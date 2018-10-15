@@ -1,12 +1,12 @@
 <div *ngIf="livro">
-  <p>
-    <img src="{{livro.capa ? livro.capa : capaDefault}}" />
-  </p>
+  <div id="pagina-livro">
+    <img src="{{livro.capa ? livro.capa : capaDefault}}" width="200px"/>
+  </div>
   <h2>
     {{livro.titulo}}
   </h2>
   <p>{{livro.ano}}</p>
-  <p>{{livro.descricao}}</p>
+  <p id="descricao">{{livro.descricao}}</p>
   <h3>Usuários que tem esse livro</h3>
   <div *ngIf="livro.usuarios">
     <ul>

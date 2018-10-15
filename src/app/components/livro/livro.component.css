@@ -1,0 +1,10 @@
+
+#pagina-livro{
+  float: left;
+  margin-right: 30px;
+}
+
+#descricao{
+  text-align: justify;
+  width: 55%;
+}
