@@ -8,6 +8,19 @@
   <p>
     <img src="{{usuario.foto ? usuario.foto : fotoDefault}}" />
   </p>
+  <h3>Livros que ele tem</h3>
+  <div *ngIf="usuario.livros">
+    <ul>
+      <li *ngFor="let livro of usuario.livros">
+        <a href="livro/{{livro.slug}}">
+          <figure [style.backgroundImage]="'url('+livro.capa+')'"></figure>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <p *ngIf="!usuario.livros">
+    Esse usuário não tem livros.
+  </p>
 </div>
 <div *ngIf="!usuario">
   <h2>
