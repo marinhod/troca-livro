@@ -7,6 +7,19 @@
   </h2>
   <p>{{livro.ano}}</p>
   <p>{{livro.descricao}}</p>
+  <h3>Usuários que tem esse livro</h3>
+  <div *ngIf="livro.usuarios">
+    <ul>
+      <li *ngFor="let usuario of livro.usuarios">
+        <a href="usuario/{{usuario.slug}}">
+          <figure [style.backgroundImage]="'url('+usuario.foto+')'"></figure>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <p *ngIf="!livro.usuarios">
+    Nenhum usuário tem esse livro.
+  </p>
 </div>
 <div *ngIf="!livro">
   <h2>
