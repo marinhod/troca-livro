@@ -1,5 +1,6 @@
 import { Autor } from "./autor";
 import { Genero } from "./genero";
+import { Usuario } from "./usuario";
 
 export class Livro {
     id: string;
@@ -9,4 +10,5 @@ export class Livro {
     autor: Autor[];
     genero: Genero[];
     ano: Date;
+    usuarios: Usuario[];
 }

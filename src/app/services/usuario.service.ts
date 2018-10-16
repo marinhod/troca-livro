@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario';
@@ -17,4 +17,21 @@ export class UsuarioService {
     return this.http.get<Usuario>(url);
   }
 
+  addLivro(usuarioSlug: string, livroSlug: string): Observable<Usuario> {
+    let url = `${this.URL}/add-livro`;
+    var json = JSON.stringify({
+      usuario: usuarioSlug, 
+      livro: livroSlug
+    });
+    var params = json;
+    return this.http.post<Usuario>(
+      url, 
+      params, 
+      { 
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json'})
+      }
+      );
+  }
+  
 }
