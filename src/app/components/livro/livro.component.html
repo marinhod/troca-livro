@@ -10,12 +10,17 @@
       <p>{{livro.ano}}</p>
       <div *ngIf="!descricaoCompleta">
         <p class="descricao">{{livro.descricao | slice:0:400}}...</p>
-        <button type="button" class="btn btn-secondary shadow shadow-hoverable" (click)="toggleDescricao()">Ver mais</button>
+        <button type="button" class="btn btn-secondary btn-sm shadow shadow-hoverable" (click)="toggleDescricao()">Ver mais</button>
       </div>
       <div *ngIf="descricaoCompleta">
         <p class="descricao">{{livro.descricao}}</p>
-        <button type="button" class="btn btn-secondary shadow shadow-hoverable" (click)="toggleDescricao()">Ver menos</button>
+        <button type="button" class="btn btn-secondary btn-sm shadow shadow-hoverable" (click)="toggleDescricao()">Ver menos</button>
       </div>
+      <br />
+      <br />
+      <h3>Tem esse livro?</h3>
+      <p>Clique no botão para adicionar a sua lista.</p>
+      <button type="button" class="btn btn-primary btn-lg">Eu tenho</button>
     </div>
   </div>
   <h3>Usuários que tem esse livro</h3>
