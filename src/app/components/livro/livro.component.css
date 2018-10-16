@@ -38,4 +38,9 @@ li > a:hover {
 .card {
   width: 15rem;
 }
-
+h1 {
+  margin-bottom: 1rem;
+}
+#autor {
+  font-size: larger;
+}
