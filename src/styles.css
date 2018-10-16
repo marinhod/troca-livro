@@ -5,3 +5,23 @@
 .shadow-hoverable:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
 }
+.livros {
+    margin: 0 auto;
+    text-align: left;
+    padding: 0;
+}
+.livros li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    margin-left: 0;
+    margin-right: 20px;
+}
+.livros li figure {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 165px;
+    margin: 0;
+}

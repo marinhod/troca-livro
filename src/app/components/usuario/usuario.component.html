@@ -10,9 +10,10 @@
       <p>{{usuario.email}}</p>
     </div>
   </div>
+  <br />
   <h3>Livros que ele tem</h3>
   <div *ngIf="usuario.livros">
-    <ul>
+    <ul class="livros">
       <li *ngFor="let livro of usuario.livros">
         <a href="livro/{{livro.slug}}">
           <figure class="shadow shadow-hoverable" [style.backgroundImage]="'url('+livro.capa+')'"></figure>

@@ -26,7 +26,7 @@
   </div>
   <br />
   <h3>Quem tem esse livro</h3>
-  <div *ngIf="livro.usuarios.length > 0">
+  <div *ngIf="livro.usuarios && livro.usuarios.length > 0">
     <ul>
       <li *ngFor="let usuario of livro.usuarios">
         <a href="usuario/{{usuario.slug}}">
@@ -40,7 +40,7 @@
       </li>
     </ul>
   </div>
-  <p *ngIf="!livro.usuarios.length > 0">
+  <p *ngIf="!livro.usuarios || !livro.usuarios.length > 0">
     Nenhum usuário tem esse livro.
   </p>
 </div>
