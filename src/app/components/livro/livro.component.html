@@ -20,10 +20,11 @@
       <br />
       <h3>Tem esse livro?</h3>
       <p>Clique no botão para adicionar a sua lista.</p>
-      <button type="button" class="btn btn-primary btn-lg">Eu tenho</button>
+      <button type="button" class="btn btn-primary btn-lg shadow shadow-hoverable">Eu tenho</button>
     </div>
   </div>
-  <h3>Usuários que tem esse livro</h3>
+  <br />
+  <h3>Quem tem esse livro</h3>
   <div *ngIf="livro.usuarios">
     <ul>
       <li *ngFor="let usuario of livro.usuarios">

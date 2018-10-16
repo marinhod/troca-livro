@@ -4,12 +4,16 @@
 }
 ul {
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
+  margin-top: 18px;
+  padding: 0;
 }
 li {
   display: inline-block;
   vertical-align: top;
   margin: 10px;
+  margin-left: 0;
+  margin-right: 25px;
 }
 li > a > .card > figure {
   background-position: center;
@@ -29,6 +33,7 @@ li > a:hover {
 .card-title {
   margin-bottom: 0;
   color: #212529;
+  text-align: center;
 }
 .card {
   width: 15rem;
