@@ -16,11 +16,7 @@
     <ul>
       <li *ngFor="let usuario of livro.usuarios">
         <a href="usuario/{{usuario.slug}}">
-          <div 
-            class="card" 
-            [ngClass]="classShadow" 
-            (mouseover)="changeStyle($event)" 
-            (mouseout)="changeStyle($event)">
+          <div class="card shadow shadow-hoverable">
             <figure class="card-img-top" [style.backgroundImage]="'url('+usuario.foto+')'"></figure>
             <div class="card-body">
               <h5 class="card-title">{{usuario.nome}} {{usuario.sobrenome}}</h5>
