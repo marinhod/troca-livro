@@ -1,5 +1,6 @@
-#descricao{
+.descricao{
   text-align: justify;
+  margin-bottom: .8rem;
 }
 ul {
   margin: 0 auto;

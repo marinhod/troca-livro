@@ -14,11 +14,14 @@ export class LivroComponent implements OnInit {
   private error: any;
   private slug: string;
   private sub: any;
+  private descricaoCompleta: boolean;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute, 
-    private livroService: LivroService) {}
+    private livroService: LivroService) {
+      this.descricaoCompleta = false;
+    }
   
   getLivro(slug: string): void {
     this.livroService
@@ -29,6 +32,10 @@ export class LivroComponent implements OnInit {
       )
   }
   
+  toggleDescricao(): void {
+    this.descricaoCompleta = !this.descricaoCompleta;
+  }
+
   getSlug(): void {
     this.sub = this.route.params.subscribe(params => {
       this.slug = params['slug'];

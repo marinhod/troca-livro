@@ -8,7 +8,14 @@
     <div class="col-md-8">
       <h1>{{livro.titulo}}</h1>
       <p>{{livro.ano}}</p>
-      <p id="descricao">{{livro.descricao}}</p>    
+      <div *ngIf="!descricaoCompleta">
+        <p class="descricao">{{livro.descricao | slice:0:400}}...</p>
+        <button type="button" class="btn btn-secondary shadow shadow-hoverable" (click)="toggleDescricao()">Ver mais</button>
+      </div>
+      <div *ngIf="descricaoCompleta">
+        <p class="descricao">{{livro.descricao}}</p>
+        <button type="button" class="btn btn-secondary shadow shadow-hoverable" (click)="toggleDescricao()">Ver menos</button>
+      </div>
     </div>
   </div>
   <h3>Usuários que tem esse livro</h3>
