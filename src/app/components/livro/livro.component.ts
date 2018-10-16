@@ -15,12 +15,14 @@ export class LivroComponent implements OnInit {
   private slug: string;
   private sub: any;
   private capaDefault: string;
+  private classShadow: string;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute, 
     private livroService: LivroService) {
       this.capaDefault = '/assets/livro-default.png';
+      this.classShadow = 'shadow';
     }
   
   getLivro(slug: string): void {
@@ -32,6 +34,10 @@ export class LivroComponent implements OnInit {
       )
   }
 
+  changeStyle($event){
+    this.classShadow = $event.type == 'mouseover' ? 'shadow-hover' : 'shadow';
+  }
+  
   getSlug(): void {
     this.sub = this.route.params.subscribe(params => {
       this.slug = params['slug'];
