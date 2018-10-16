@@ -18,7 +18,7 @@ export class LivroComponent implements OnInit {
   private sub: any;
   private descricaoCompleta: boolean;
   private currentUser: string;
-  private postData;
+  private temLivro: boolean;
 
   constructor(
     private router: Router,
@@ -26,6 +26,7 @@ export class LivroComponent implements OnInit {
     private livroService: LivroService,
     private usuarioService: UsuarioService) {
       this.descricaoCompleta = false;
+      this.temLivro = false;
       this.currentUser = CURRENT_USER;
     }
   
@@ -34,7 +35,8 @@ export class LivroComponent implements OnInit {
       .getLivro(slug)
       .subscribe(
         item => (this.livro = item),
-        error => (this.error = error)
+        error => (this.error = error),
+        () => this.verificaSeTemLivro()
       )
   }
   
@@ -47,7 +49,7 @@ export class LivroComponent implements OnInit {
       .subscribe(
         usuario => this.livro.usuarios.push(usuario),
         error => console.log(error),
-        () => console.log(this.postData)
+        () => console.log("==")
       );
   }
 
@@ -55,6 +57,18 @@ export class LivroComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       this.slug = params['slug'];
     });
+  }
+
+  verificaSeTemLivro() {
+    for (const key in this.livro.usuarios) {
+      if (this.livro.usuarios[key].slug === this.currentUser) {
+        this.temLivro = true;
+      }
+    }
+  }
+
+  removeLivro(slug: string) {
+    // code
   }
 
   ngOnInit() {
