@@ -19,7 +19,7 @@ li > a > .card > figure {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 220px;
+  height: 200px;
   width: 100%;
   margin: 0;
 }
@@ -36,7 +36,7 @@ li > a:hover {
   text-align: center;
 }
 .card {
-  width: 15rem;
+  width: 12rem;
 }
 h1 {
   margin-bottom: 1rem;
