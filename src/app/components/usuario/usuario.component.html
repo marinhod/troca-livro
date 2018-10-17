@@ -9,15 +9,17 @@
       <br />
       <h3>Entre em contato com ele(a)</h3>
       <p>Escolha um livro e clique em enviar para notificar o usuário(a) no seu interesse no livro selecionado.</p>
-      <select>
-        <option selected value="0">Selecione</option>
-        <option class="form-control" *ngFor="let livro of usuario.livros" value="{{livro.slug}}">
-          {{livro.titulo}}
-        </option>
-      </select>
-      <br />
-      <br />
-      <button type="button" class="btn btn-primary btn-lg shadow shadow-hoverable" (click)="notificar()">Enviar</button>
+      <form (ngSubmit)="trocaFormSubmit()">
+        <select name="slug" [formControl]="trocaFormSlug" required>
+          <option selected value="">Selecione</option>
+          <option class="form-control" *ngFor="let livro of usuario.livros" value="{{livro.slug}}">
+            {{livro.titulo}}
+          </option>
+        </select>
+        <br />
+        <br />
+        <button type="submit" class="btn btn-primary btn-lg shadow shadow-hoverable" [disabled]="!trocaFormSlug.valid">Enviar</button>
+      </form>
     </div>
   </div>
   <br />

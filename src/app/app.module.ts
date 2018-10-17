@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { appRoutes } from './routes';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { LivroComponent } from './components/livro/livro.component';
 import { HomeComponent } from './components/home/home.component';
@@ -24,7 +25,9 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot( appRoutes, { enableTracing: true } ),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

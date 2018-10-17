@@ -3,6 +3,7 @@ import { Usuario } from '../../models/usuario';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-usuario',
@@ -15,6 +16,7 @@ export class UsuarioComponent implements OnInit, OnDestroy {
   private slug: string;
   private sub: any;
   private fotoDefault: string;
+  private trocaFormSlug = new FormControl('');
 
   constructor(
     private router: Router,
@@ -22,6 +24,10 @@ export class UsuarioComponent implements OnInit, OnDestroy {
     private usuarioService: UsuarioService) {
       this.fotoDefault = '/assets/perfil-default.png';
     }
+
+  trocaFormSubmit() {
+    console.log(this.trocaFormSlug.value);
+  }
 
   getUsuario(slug: string): void {
     this.usuarioService
@@ -36,10 +42,6 @@ export class UsuarioComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe(params => {
       this.slug = params['slug'];
     });
-  }
-
-  notificar(): void {
-    // code
   }
 
   ngOnInit() {
