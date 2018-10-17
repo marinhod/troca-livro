@@ -38,6 +38,10 @@ export class UsuarioComponent implements OnInit, OnDestroy {
     });
   }
 
+  notificar(): void {
+    // code
+  }
+
   ngOnInit() {
     this.getSlug();
     this.getUsuario(this.slug);
