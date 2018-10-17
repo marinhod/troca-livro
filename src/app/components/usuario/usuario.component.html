@@ -1,9 +1,7 @@
 <div *ngIf="usuario">
   <div class="row">
     <div class="col-md-4">
-      <figure class="shadow">
-        <img src="{{usuario.foto ? usuario.foto : fotoDefault}}" />
-      </figure>
+      <figure id="foto" class="shadow" [style.backgroundImage]="'url('+usuario.foto+')'"></figure>
     </div>
     <div class="col-md-8">
       <h1>{{usuario.nome}} {{usuario.sobrenome}}</h1>
