@@ -67,10 +67,15 @@ export class LivroComponent implements OnInit {
     }
   }
 
-  removeLivro(slug: string) {
-    // code
+  removeLivro(livroSlug: string) {
+    this.usuarioService.removeLivro(this.currentUser, livroSlug)
+      .subscribe(
+        usuario => this.livro.usuarios.splice(this.livro.usuarios.indexOf(usuario), 1),
+        error => console.log(error),
+        () => console.log("==")
+      );
   }
-
+  // list.splice( list.indexOf('foo'), 1 );
   ngOnInit() {
     this.getSlug();
     this.getLivro(this.slug);
