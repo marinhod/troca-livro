@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { LivroComponent } from './components/livro/livro.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -18,7 +17,6 @@ import { FooterComponent } from './components/footer/footer.component';
     UsuarioComponent,
     LivroComponent,
     HomeComponent,
-    LoginComponent,
     HeaderComponent,
     FooterComponent
   ],
