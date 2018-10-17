@@ -34,5 +34,23 @@ export class UsuarioService {
       }
     );
   }
+
+  removeLivro(usuarioSlug: string, livroSlug: string): Observable<Usuario> {
+    let url = `${this.URL}/add-livro`;
+    var json = JSON.stringify({
+      usuario: usuarioSlug, 
+      livro: livroSlug,
+      opcao: 'remove'
+    });
+    var params = json;
+    return this.http.post<Usuario>(
+      url, 
+      params, 
+      { 
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json'})
+      }
+    );
+  }
   
 }
