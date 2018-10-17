@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { LivroService } from '../../services/livro.service';
 import { UsuarioService } from '../../services/usuario.service';
 import { CURRENT_USER } from 'env-config';
+import { Usuario } from '../../models/usuario';
 
 @Component({
   selector: 'app-livro',
@@ -47,7 +48,7 @@ export class LivroComponent implements OnInit {
   addLivro(livroSlug): void {
     this.usuarioService.addLivro(this.currentUser, livroSlug)
       .subscribe(
-        usuario => this.livro.usuarios.push(usuario),
+        usuario => this.addUsuario(usuario),
         error => console.log(error),
         () => console.log("==")
       );
@@ -67,15 +68,29 @@ export class LivroComponent implements OnInit {
     }
   }
 
+  addUsuario(usuario: Usuario) {
+    let novoArray: Usuario[] = this.livro.usuarios;
+    novoArray.push(usuario);
+    this.livro.usuarios = novoArray;
+    this.temLivro = true;
+  }
+
+  removeUsuario(usuario: Usuario) {
+    let novoArray: Usuario[] = this.livro.usuarios;
+    novoArray = novoArray.filter( el => el.slug !== usuario.slug );
+    this.livro.usuarios = novoArray;
+    this.temLivro = false;
+  }
+
   removeLivro(livroSlug: string) {
     this.usuarioService.removeLivro(this.currentUser, livroSlug)
       .subscribe(
-        usuario => this.livro.usuarios.splice(this.livro.usuarios.indexOf(usuario), 1),
+        usuario => this.removeUsuario(usuario),
         error => console.log(error),
         () => console.log("==")
       );
   }
-  // list.splice( list.indexOf('foo'), 1 );
+
   ngOnInit() {
     this.getSlug();
     this.getLivro(this.slug);
