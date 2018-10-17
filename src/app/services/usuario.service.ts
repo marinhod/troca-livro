@@ -9,6 +9,7 @@ import { BASE_URL } from '../../../env-config';
 })
 export class UsuarioService {
   private URL = `${BASE_URL}/usuario`;
+  private contentType = 'application/json';
 
   constructor(private http: HttpClient) {}
 
@@ -18,7 +19,7 @@ export class UsuarioService {
   }
 
   addLivro(usuarioSlug: string, livroSlug: string): Observable<Usuario> {
-    let url = `${this.URL}/add-livro`;
+    let url = `${this.URL}/edita-livros`;
     var json = JSON.stringify({
       usuario: usuarioSlug, 
       livro: livroSlug,
@@ -28,15 +29,14 @@ export class UsuarioService {
     return this.http.post<Usuario>(
       url, 
       params, 
-      { 
-        headers: new HttpHeaders({
-          'Content-Type':  'application/json'})
-      }
+      { headers: new HttpHeaders({ 
+        'Content-Type':  this.contentType 
+      })}
     );
   }
 
   removeLivro(usuarioSlug: string, livroSlug: string): Observable<Usuario> {
-    let url = `${this.URL}/add-livro`;
+    let url = `${this.URL}/edita-livros`;
     var json = JSON.stringify({
       usuario: usuarioSlug, 
       livro: livroSlug,
@@ -46,10 +46,9 @@ export class UsuarioService {
     return this.http.post<Usuario>(
       url, 
       params, 
-      { 
-        headers: new HttpHeaders({
-          'Content-Type':  'application/json'})
-      }
+      { headers: new HttpHeaders({ 
+        'Content-Type':  this.contentType 
+      })}
     );
   }
   
