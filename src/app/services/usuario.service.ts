@@ -21,7 +21,8 @@ export class UsuarioService {
     let url = `${this.URL}/add-livro`;
     var json = JSON.stringify({
       usuario: usuarioSlug, 
-      livro: livroSlug
+      livro: livroSlug,
+      opcao: 'insere'
     });
     var params = json;
     return this.http.post<Usuario>(
@@ -31,7 +32,7 @@ export class UsuarioService {
         headers: new HttpHeaders({
           'Content-Type':  'application/json'})
       }
-      );
+    );
   }
   
 }
